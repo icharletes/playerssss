@@ -8,6 +8,28 @@
 <body>
 
 <div class="audio-player">
+
+    <div class="cover hidden" style="display:none">
+        <img class="cover_image" src="https://placehold.co/600x600" alt="">
+    </div>
+    <div class="metadata_div">
+
+        <div class="before-song hidden" style="display:none">
+            <small>canción anterior</small>
+            <div class="before-song-text">Alone again (Naturally) <span>Gilbert O'Sullivan</span></div>
+        </div>
+        
+        <div class="name-track hidden" style="display:none">
+            <div class="song-name">Bennie and The Jets</div>
+            <div class="artist-name">Elton John</div>
+        </div>
+        
+        <div class="after-song hidden" style="display:none">
+            <small>canción siguiente</small>
+            <div class="before-song-text">Alone again (Naturally) <span>Gilbert O'Sullivan</span></div>
+        </div>
+    </div>
+
     <div class="player-top">
         <input
             type="range"
@@ -21,17 +43,66 @@
     </div>
 
     <div class="player-bottom">
-        <button class="volume-btn" id="volumeBtn" aria-label="Volumen">
-            <img src="img/vol.svg" alt="Volumen">
-        </button>
 
+        <!-- PLAY -->
         <button class="play-btn" id="playBtn" aria-label="Play">
             <img src="img/play.svg" alt="Play">
         </button>
+
+        <!-- VOLUMEN -->
+        <div class="volume-wrapper">
+            <button class="volume-btn" id="volumeBtn" aria-label="Volumen">
+                <img src="img/vol.svg" alt="Volumen">
+            </button>
+
+            <div class="volume-panel">
+                <input
+                    type="range"
+                    id="volumeRange"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                >
+                <span class="volume-percent" id="volumePercent">100%</span>
+            </div>
+        </div>
+
+        <div class="more-options">
+            <button class="more-option-btn">
+                <img src="img/settings.svg" alt="">
+            </button>
+        </div>
+
     </div>
 
-    <!-- Audio -->
-    <audio id="audio" src="europe-endless.mp3"></audio>
+    <audio
+        id="audio"
+        src="europe-endless.mp3"
+        data-title="Nombre de la Canción"
+    ></audio>
+
+    <div class="settings">
+        <p>Settings:</p>
+        <ul>
+            <li class="setting-item" data-target="cover" data-name="cover">
+                <i class="icon-list"><img src="img/eye-on.svg" alt=""></i>
+                <span class="setting-label">Show cover</span>
+            </li>
+            <li class="setting-item" data-target="name-track" data-name="song and artist">
+                <i class="icon-list"><img src="img/eye-on.svg" alt=""></i>
+                <span class="setting-label">Show song and artist</span>
+            </li>
+            <li class="setting-item" data-target="before-song" data-name="before song">
+                <i class="icon-list"><img src="img/eye-on.svg" alt=""></i>
+                <span class="setting-label">Show before song</span>
+            </li>
+            <li class="setting-item" data-target="after-song" data-name="next song">
+                <i class="icon-list"><img src="img/eye-on.svg" alt=""></i>
+                <span class="setting-label">Show next song</span>
+            </li>
+        </ul>
+    </div>
+
 </div>
 
 <script src="js/main.js" defer></script>
