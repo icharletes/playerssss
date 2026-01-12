@@ -317,7 +317,7 @@ body {
 
 @media (min-width: 768px) {
     .audio-player {
-        width: 600px;
+        max-width: 600px;
     }
 
     .player-top {
