@@ -51,6 +51,7 @@ body {
     max-height: 1000px;
     opacity: 1;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .hidden {
@@ -72,7 +73,7 @@ body {
     flex-direction: row;
     flex:1;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-start;
 }
 .before-song,
 .after-song{
@@ -315,6 +316,8 @@ body {
 }
 
 
+
+
 @media (min-width: 768px) {
     .audio-player {
         max-width: 600px;
@@ -330,5 +333,5 @@ body {
 
     .settings ul li{
         width: 48%;
-    }
+    }   
 }
